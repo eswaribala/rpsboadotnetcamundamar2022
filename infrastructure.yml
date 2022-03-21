@@ -3,20 +3,20 @@ services:
     camunda:
         image: camunda/camunda-bpm-platform:latest
         ports: 
-            - 6060:8080
+          - 6060:8080
 
     sqlserverservice:  
-    image: mcr.microsoft.com/mssql/server 
-    hostname: 'sqlserverservice'  
-    environment:  
-      ACCEPT_EULA: 'Y' 
-      SA_PASSWORD: "Vignesh@95!"
-      MSSQL_PID: 'Express'
-    volumes:  
-      - ./camundaapi:/var/opt/mssql/data 
-    ports:  
-      - '1406:1433'  
-    expose:  
-      - 1406
+       image: mcr.microsoft.com/mssql/server 
+       hostname: 'sqlserverservice'  
+       environment:  
+           ACCEPT_EULA: 'Y' 
+           SA_PASSWORD: "Vignesh@95!"
+           MSSQL_PID: 'Express'
+       volumes:  
+         - ./camundaapi:/var/opt/mssql/data 
+       ports:  
+        - '1406:1433'  
+       expose:  
+         - 1406
     
     
